@@ -3,9 +3,9 @@ A shader sample for Unity that computes the wave equation
 
 ## Demonstration
 
-[demonstration](https://youtu.be/V12FfDHsy4s)  
+[demonstration](https://youtu.be/IHoPIK3T5T8)  
 
-https://user-images.githubusercontent.com/121733943/214492619-82029019-5b5d-4f55-b2b9-6300ebc3aeaa.mp4
+https://user-images.githubusercontent.com/121733943/214539322-8955e01b-9916-4626-b636-c3873a0dd6d4.mp4
 
 ## Operating environment
 OS: Windows 10 pro  
