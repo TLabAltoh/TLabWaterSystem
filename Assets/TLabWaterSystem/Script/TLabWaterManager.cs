@@ -3,22 +3,32 @@ using UnityEngine;
 public class TLabWaterManager : MonoBehaviour
 {
     [SerializeField] Texture2D stampTexture;
-    private const int mTextureWidth = 512;
-    private const int mTextureHeight = 512;
+
+    [Tooltip("Material to which the computed wave normal texture is applied")]
+    [SerializeField] public Material WaveMat;
+
+    [Tooltip("Materials that calculate the wave equation")]
+    [SerializeField] public Material WaveEquationMat;
+
+    [Tooltip("Material that computes wave normals from the result of the wave equation")]
+    [SerializeField] public Material WaveNormalMat;
+
     private Texture input;
     private WaterInput waterInput;
-    public Material WaveMat;            // 最終結果
-    public Material WaveEquationMat;    // 波動方程式の計算
-    public Material WaveNormalMat;      // 波の法線の計算
+
     private RenderTexture prevResult;
     private RenderTexture prev2Result;
     private RenderTexture result;
     private RenderTexture waveNormal;
-    public static readonly int InputTex = Shader.PropertyToID("_InputTex");     // Wave equation
+
+    private const int mTextureWidth = 512;
+    private const int mTextureHeight = 512;
+
+    public static readonly int InputTex = Shader.PropertyToID("_InputTex");
     public static readonly int PrevTex = Shader.PropertyToID("_PrevTex");
     public static readonly int Prev2Texv = Shader.PropertyToID("_Prev2Tex");
-    public static readonly int WaveTex = Shader.PropertyToID("_WaveTex");       // Wave normal
-    public static readonly int WaveNormal = Shader.PropertyToID("_WaveNormal"); // 最終結果
+    public static readonly int WaveTex = Shader.PropertyToID("_WaveTex");
+    public static readonly int WaveNormal = Shader.PropertyToID("_WaveNormal");
 
     public void InputInWater(Vector2 hitUv)
     {
@@ -37,7 +47,7 @@ public class TLabWaterManager : MonoBehaviour
         Graphics.Blit(null, waveNormal, WaveNormalMat);
 
         // 法線の計算結果を最終結果のマテリアルに適応する
-        // WaveMat.SetTexture(WaveNormal, waveNormal);
+        WaveMat.SetTexture(WaveNormal, waveNormal);
 
         // RenderTextureを1つずつ入れ替える
         var tmp = prev2Result;
@@ -76,30 +86,10 @@ public class TLabWaterManager : MonoBehaviour
         }
         waterInput = new WaterInput(mTextureWidth, mTextureHeight, stampTexture);
 
-        result = new RenderTexture(
-            mTextureWidth,
-            mTextureHeight,
-            0,
-            RenderTextureFormat.R8
-        );
-        prevResult = new RenderTexture(
-            mTextureWidth,
-            mTextureHeight,
-            0,
-            RenderTextureFormat.R8
-        );
-        prev2Result = new RenderTexture(
-            mTextureWidth,
-            mTextureHeight,
-            0,
-            RenderTextureFormat.R8
-        );
-        waveNormal = new RenderTexture(
-            mTextureWidth,
-            mTextureHeight,
-            0,
-            RenderTextureFormat.ARGB32
-        );
+        result = new RenderTexture(mTextureWidth, mTextureHeight, 0, RenderTextureFormat.R8);
+        prevResult = new RenderTexture(mTextureWidth, mTextureHeight, 0, RenderTextureFormat.R8);
+        prev2Result = new RenderTexture(mTextureWidth, mTextureHeight, 0, RenderTextureFormat.R8);
+        waveNormal = new RenderTexture(mTextureWidth, mTextureHeight, 0, RenderTextureFormat.ARGB32);
 
         // バッファの初期化
         var r8Init = new Texture2D(1, 1);
@@ -111,11 +101,14 @@ public class TLabWaterManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) == true)
+        if (Input.GetMouseButton(0) == true)
         {
-            Vector2 randomInput = new Vector2(Random.Range(0f, 1f), Random.Range(0f, 1f));
-            InputInWater(randomInput);
-            Debug.Log("randomInput: " + randomInput);
+            RaycastHit hit;
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit))
+            {
+                InputInWater(hit.textureCoord);
+            }
         }
         else
             InputInWater(Vector2.zero);

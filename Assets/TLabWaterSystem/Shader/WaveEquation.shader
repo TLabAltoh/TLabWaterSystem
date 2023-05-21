@@ -53,26 +53,30 @@ Shader "Unlit/WaveEquation"
 
 			fixed4 frag(v2f i) : SV_Target
 			{
-				/* 波の高さを表現するので(r = 0.5)を高さ0の状態とする				 */
-				/* そのため、高さを(-1 <= r <= 1)の範囲で表すために(r * 2 - 1)を行う */
-
 				float2 stride = float2(_Stride, _Stride) * _PrevTex_TexelSize.xy;
-				half4 prev = (tex2D(_PrevTex, i.uv) * 2) - 1;
 
-				half value = (prev.r * 2 +
-							 ((tex2D(_PrevTex, half2(i.uv.x + stride.x, i.uv.y)).r * 2 - 1) +
-							  (tex2D(_PrevTex, half2(i.uv.x - stride.x, i.uv.y)).r * 2 - 1) +
-							  (tex2D(_PrevTex, half2(i.uv.x, i.uv.y + stride.y)).r * 2 - 1) +
-							  (tex2D(_PrevTex, half2(i.uv.x, i.uv.y - stride.y)).r * 2 - 1) -
-							  prev.r * 4) * _C) -
-							 (tex2D(_Prev2Tex, i.uv).r * 2 - 1);
+				//half4 prev = (tex2D(_PrevTex, i.uv) * 2) - 1;
+
+				//half value = prev.r * 2 - (tex2D(_Prev2Tex, i.uv).r * 2 - 1) +
+				//			 ((tex2D(_PrevTex, half2(i.uv.x + stride.x, i.uv.y)).r * 2 - 1) +
+				//			  (tex2D(_PrevTex, half2(i.uv.x - stride.x, i.uv.y)).r * 2 - 1) +
+				//			  (tex2D(_PrevTex, half2(i.uv.x, i.uv.y + stride.y)).r * 2 - 1) +
+				//			  (tex2D(_PrevTex, half2(i.uv.x, i.uv.y - stride.y)).r * 2 - 1) -
+				//			  prev.r * 4) * _C;
+
+				half4 prev = tex2D(_PrevTex, i.uv);
+				half value = prev.r * 2 - tex2D(_Prev2Tex, i.uv).r +
+					 (tex2D(_PrevTex, half2(i.uv.x + stride.x, i.uv.y)).r +
+					  tex2D(_PrevTex, half2(i.uv.x - stride.x, i.uv.y)).r +
+					  tex2D(_PrevTex, half2(i.uv.x, i.uv.y + stride.y)).r +
+					  tex2D(_PrevTex, half2(i.uv.x, i.uv.y - stride.y)).r -
+					  prev.r * 4) * _C;
 
 				/* Attenuationで波に減衰を加える */
 				value *= _Attenuation;
-				value = (value + 1) * 0.5;
 
 				float4 input = tex2D(_InputTex, i.uv);
-				value -= input.a;
+				value += input.r;
 				value += _RoundAdjuster;
 				return fixed4(value, 0, 0, 1);
 			}
