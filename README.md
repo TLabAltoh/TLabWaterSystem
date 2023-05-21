@@ -1,14 +1,14 @@
 # TLabWaterSystem
 A shader sample for Unity that computes the wave equation  
 Smooth wave simulation at low resolution (512 * 512)  
-Supports wave reflection  
+Supports wave reflection 
 Supports URP only
 
 ## Screenshot
 ![tlabwatersystem-gif](https://github.com/TLabAltoh/TLabWaterSystem/assets/121733943/f95972d2-061d-4b6f-94bf-fb0e1756643d)
 
 ## Operating environment
-- OS: Windows 10
+- OS: Windows 10 Pro
 - GPU: NVIDIA GeForce RTX 3070
 
 ## Getting Started
