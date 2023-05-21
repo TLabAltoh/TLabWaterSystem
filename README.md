@@ -1,6 +1,6 @@
 # TLabWaterSystem
-A shader sample for Unity that computes the wave equation
-Smooth wave simulation at low resolution (512 * 512)
+A shader sample for Unity that computes the wave equation  
+Smooth wave simulation at low resolution (512 * 512)  
 Supports URP only
 
 ## Screenshot
