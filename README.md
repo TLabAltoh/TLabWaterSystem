@@ -5,7 +5,7 @@ Supports wave reflection
 Supports URP only
 
 ## Screenshot
-![tlabwatersystem-gif](https://github.com/TLabAltoh/TLabWaterSystem/assets/121733943/f95972d2-061d-4b6f-94bf-fb0e1756643d)
+![tlabwatersystem-gif](Media/tlab-water-system.gif)
 
 ## Operating environment
 - OS: Windows 10 Pro
