@@ -390,8 +390,8 @@ MonoBehaviour:
   m_wave_equation_mat: {fileID: 2100000, guid: a47ae028c096a044b818f609580220a7, type: 2}
   m_wave_normal_mat: {fileID: 2100000, guid: 219f65a9542cce64990e26a5d07f7cc0, type: 2}
   m_stamp_tex: {fileID: 2800000, guid: be44cca7da0ada144a83a2a1c111cbdb, type: 3}
-  m_tex_width: 512
-  m_tex_height: 512
+  m_tex_width: 256
+  m_tex_height: 256
 --- !u!4 &1148584755
 Transform:
   m_ObjectHideFlags: 0
