@@ -46,10 +46,10 @@ Shader "Unlit/WaveNormal"
 		float _ParallaxScale;
 		float _NormalScaleFactor;
 
-		float easeIn(float k)
+		float ease_in(float k)
 		{
 			// http://marupeke296.com/TIPS_No19_interpolation.html
-			return 1.0 / (1.0 + exp(-8.0 * (k - 1.0))) * 2.0;
+			return 1 / (1 + exp(-8 * (k - 1))) * 2;
 		}
 
 		v2f vert(appdata v)
@@ -71,21 +71,21 @@ Shader "Unlit/WaveNormal"
 			shiftZ *= _ParallaxScale * _NormalScaleFactor;
 
 			/* 各軸で両方向での波の高さの変化量を取得 */
-			float3 texX = tex2Dlod(_WaveTex, float4(i.uv.xy + shiftX, 0, 0));
-			float3 texx = tex2Dlod(_WaveTex, float4(i.uv.xy - shiftX, 0, 0));
-			float3 texZ = tex2Dlod(_WaveTex, float4(i.uv.xy + shiftZ, 0, 0));
-			float3 texz = tex2Dlod(_WaveTex, float4(i.uv.xy - shiftZ, 0, 0));
+			float texX = tex2Dlod(_WaveTex, float4(i.uv.xy + shiftX, 0, 0)).r;
+			float texx = tex2Dlod(_WaveTex, float4(i.uv.xy - shiftX, 0, 0)).r;
+			float texZ = tex2Dlod(_WaveTex, float4(i.uv.xy + shiftZ, 0, 0)).r;
+			float texz = tex2Dlod(_WaveTex, float4(i.uv.xy - shiftZ, 0, 0)).r;
 
-			float texC = tex2Dlod(_WaveTex, float4(i.uv.xy, 0, 0));
+			float texC = tex2Dlod(_WaveTex, float4(i.uv.xy, 0, 0)).r;
 
 			/* 各軸の変化量の外積(その面における法線の向き)を求める */
 			//float3 du = { 1, 0, _NormalScaleFactor * (texX.x - texx.x) };
 			//float3 dv = { 0, 1, _NormalScaleFactor * (texZ.x - texz.x) };
 			//float2 bump = (normalize(cross(du, dv)) + 1) * 0.5;			// 0～1の範囲に戻す
 
-			float3 bump = normalize(float3(texX.x - texx.x, texZ.x - texz.x, 0.1));
+			float3 normal = normalize(float3(texX - texx, texZ - texz, 0.1));
 
-			return float4(_NormalScaleFactor * easeIn(texC) * bump, 1);
+			return float4(_NormalScaleFactor * ease_in(texC) * normal, 1);
 		}
 
 		ENDCG

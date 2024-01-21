@@ -1482,7 +1482,7 @@
     "m_Guid": {
         "m_GuidSerialized": "a3c2640f-9047-42c1-a9ba-9386da0ef22a"
     },
-    "m_Name": "noiseTailling",
+    "m_Name": "NoiseTailling",
     "m_DefaultRefNameVersion": 0,
     "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector2_08d832c7b6884e0dbd9f4d129bf6f483",
@@ -1824,7 +1824,7 @@
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.GroupData",
     "m_ObjectId": "107e0bfe4eba44ec804cfbd8594eb26d",
-    "m_Title": "3つのカラー要素を線形で補間する(フレネル反射と震度フェードアウトを実行)",
+    "m_Title": "3つのカラー要素を線形で補間する(フレネル反射と深度フェードアウトを実行)",
     "m_Position": {
         "x": 10.0,
         "y": 10.0
@@ -2239,10 +2239,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1500.800048828125,
-            "y": 2220.800048828125,
-            "width": 125.60009765625,
-            "height": 117.599853515625
+            "x": -1609.0,
+            "y": 2219.0,
+            "width": 126.0,
+            "height": 118.0
         }
     },
     "m_Slots": [
@@ -2340,10 +2340,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1170.4000244140625,
-            "y": 2046.39990234375,
-            "width": 125.5999755859375,
-            "height": 117.60009765625
+            "x": -1278.0001220703125,
+            "y": 2044.0,
+            "width": 126.0,
+            "height": 118.0
         }
     },
     "m_Slots": [
@@ -2371,7 +2371,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
     "m_ObjectId": "1c4c82f2d59042108ed7019aff1308dc",
     "m_Id": 0,
-    "m_DisplayName": "noiseTailling",
+    "m_DisplayName": "NoiseTailling",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -2542,10 +2542,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -696.0,
-            "y": 2280.800048828125,
-            "width": 129.5999755859375,
-            "height": 33.599853515625
+            "x": -803.9998779296875,
+            "y": 2279.0,
+            "width": 126.99981689453125,
+            "height": 34.0
         }
     },
     "m_Slots": [
@@ -2577,10 +2577,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1481.5999755859375,
-            "y": 1996.0,
-            "width": 128.0,
-            "height": 93.60009765625
+            "x": -1590.0,
+            "y": 1994.0,
+            "width": 127.9998779296875,
+            "height": 94.0
         }
     },
     "m_Slots": [
@@ -2806,10 +2806,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -993.5999755859375,
-            "y": 1875.199951171875,
-            "width": 125.5999755859375,
-            "height": 117.60009765625
+            "x": -1102.0,
+            "y": 1873.0,
+            "width": 125.99993896484375,
+            "height": 118.0
         }
     },
     "m_Slots": [
@@ -3257,10 +3257,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -528.0,
-            "y": 2197.60009765625,
-            "width": 125.60000610351563,
-            "height": 117.599853515625
+            "x": -636.0,
+            "y": 2196.0,
+            "width": 125.99996948242188,
+            "height": 118.0
         }
     },
     "m_Slots": [
@@ -3295,10 +3295,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1980.800048828125,
-            "y": 2168.0,
-            "width": 142.4000244140625,
-            "height": 33.60009765625
+            "x": -2089.0,
+            "y": 2166.0,
+            "width": 140.9998779296875,
+            "height": 34.0
         }
     },
     "m_Slots": [
@@ -3415,10 +3415,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -834.4000854492188,
-            "y": 1912.0,
-            "width": 125.60002899169922,
-            "height": 117.60009765625
+            "x": -942.0,
+            "y": 1910.0,
+            "width": 126.0,
+            "height": 118.0
         }
     },
     "m_Slots": [
@@ -3475,10 +3475,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1975.199951171875,
-            "y": 2132.800048828125,
-            "width": 134.39990234375,
-            "height": 33.599853515625
+            "x": -2089.0,
+            "y": 2132.0,
+            "width": 132.9998779296875,
+            "height": 34.0
         }
     },
     "m_Slots": [
@@ -3984,10 +3984,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -5047.2001953125,
-            "y": 4651.2001953125,
-            "width": 128.0,
-            "height": 172.7998046875
+            "x": -5031.00048828125,
+            "y": 4651.0,
+            "width": 124.0,
+            "height": 173.0
         }
     },
     "m_Slots": [
@@ -4221,7 +4221,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "63ce697723d6498181afe54f4cfc3270",
     "m_Id": 0,
-    "m_DisplayName": "_CameraOpaqueTexture",
+    "m_DisplayName": "CameraOpaqueTexture",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -4561,10 +4561,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1976.0,
-            "y": 1921.5999755859375,
-            "width": 144.800048828125,
-            "height": 128.7999267578125
+            "x": -2084.0,
+            "y": 1920.0,
+            "width": 145.0,
+            "height": 129.0
         }
     },
     "m_Slots": [
@@ -4681,10 +4681,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1135.199951171875,
-            "y": 1827.199951171875,
-            "width": 119.99993896484375,
-            "height": 148.800048828125
+            "x": -1243.0001220703125,
+            "y": 1825.0,
+            "width": 120.0001220703125,
+            "height": 149.0
         }
     },
     "m_Slots": [
@@ -4802,10 +4802,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1678.4000244140625,
-            "y": 2224.800048828125,
-            "width": 125.5999755859375,
-            "height": 117.599853515625
+            "x": -1786.0,
+            "y": 2223.0,
+            "width": 126.0,
+            "height": 118.0
         }
     },
     "m_Slots": [
@@ -5150,10 +5150,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1705.5999755859375,
-            "y": 1860.800048828125,
-            "width": 186.4000244140625,
-            "height": 250.39990234375
+            "x": -1814.0,
+            "y": 1859.0,
+            "width": 182.9998779296875,
+            "height": 251.0
         }
     },
     "m_Slots": [
@@ -5201,7 +5201,7 @@
     "m_Guid": {
         "m_GuidSerialized": "7dd21014-46df-417a-8b17-79f89498dfd2"
     },
-    "m_Name": "_CameraDepthTexture",
+    "m_Name": "CameraDepthTexture",
     "m_DefaultRefNameVersion": 0,
     "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Texture2D_82d20b49318b40659a69bbf53fa00800",
@@ -5235,10 +5235,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1335.199951171875,
-            "y": 2096.0,
-            "width": 125.5999755859375,
-            "height": 117.60009765625
+            "x": -1443.0001220703125,
+            "y": 2094.0,
+            "width": 126.0,
+            "height": 118.0
         }
     },
     "m_Slots": [
@@ -5626,7 +5626,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "887bfc6320d941bcbab2528790b6720d",
     "m_Id": 0,
-    "m_DisplayName": "_CameraDepthTexture",
+    "m_DisplayName": "CameraDepthTexture",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -5778,8 +5778,8 @@
     "m_ObjectId": "8cdad6329ed94580898d6d876880b123",
     "m_Title": "深度バッファからオブジェクトとの距離を計算する",
     "m_Position": {
-        "x": -2020.0,
-        "y": 1769.60009765625
+        "x": -2114.0,
+        "y": 1764.0
     }
 }
 
@@ -6544,10 +6544,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -367.2000427246094,
-            "y": 1912.0,
-            "width": 153.60000610351563,
-            "height": 141.60009765625
+            "x": -475.0,
+            "y": 1910.0,
+            "width": 151.99990844726563,
+            "height": 142.0
         }
     },
     "m_Slots": [
@@ -6613,7 +6613,7 @@
     "m_Guid": {
         "m_GuidSerialized": "9f197e4b-31e6-4807-a64a-c491a85ffac7"
     },
-    "m_Name": "_CameraOpaqueTexture",
+    "m_Name": "CameraOpaqueTexture",
     "m_DefaultRefNameVersion": 0,
     "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Texture2D_af6b71e8124048be9e6ff9c642a483bb",
@@ -6809,10 +6809,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1129.5999755859375,
-            "y": 1997.5999755859375,
-            "width": 107.99999237060547,
-            "height": 33.5999755859375
+            "x": -1238.0001220703125,
+            "y": 1996.0,
+            "width": 108.0001220703125,
+            "height": 34.0
         }
     },
     "m_Slots": [
@@ -7061,10 +7061,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1345.5999755859375,
-            "y": 1828.0,
-            "width": 206.4000244140625,
-            "height": 130.4000244140625
+            "x": -1454.0001220703125,
+            "y": 1826.0,
+            "width": 206.0001220703125,
+            "height": 131.0001220703125
         }
     },
     "m_Slots": [
@@ -7143,10 +7143,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1822.4000244140625,
-            "y": 2117.60009765625,
-            "width": 125.5999755859375,
-            "height": 117.599853515625
+            "x": -1930.0001220703125,
+            "y": 2116.0,
+            "width": 126.0,
+            "height": 118.0
         }
     },
     "m_Slots": [
@@ -7491,10 +7491,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1995.199951171875,
-            "y": 1872.800048828125,
-            "width": 195.19993591308595,
-            "height": 33.5999755859375
+            "x": -2084.0,
+            "y": 1867.0,
+            "width": 185.9998779296875,
+            "height": 34.0
         }
     },
     "m_Slots": [
@@ -8301,10 +8301,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -680.7999267578125,
-            "y": 2095.199951171875,
-            "width": 125.5999755859375,
-            "height": 117.60009765625
+            "x": -789.0,
+            "y": 2093.0,
+            "width": 126.0,
+            "height": 118.0
         }
     },
     "m_Slots": [
@@ -8620,10 +8620,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1341.60009765625,
-            "y": 2054.39990234375,
-            "width": 134.4000244140625,
-            "height": 33.60009765625
+            "x": -1450.0001220703125,
+            "y": 2052.0,
+            "width": 133.0,
+            "height": 34.0
         }
     },
     "m_Slots": [
