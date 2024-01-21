@@ -5,7 +5,7 @@ Shader "Unlit/WaveEquation"
 		_InputTex("Input", 2D) = "black" {}
 		_PrevTex("Prev", 2D) = "black" {}
 		_Prev2Tex("Prev2", 2D) = "black" {}
-		_RoundAdjuster("Adjuster", Float) = 1.005
+		_RoundAdjuster("Adjuster", Float) = 0.001
 		_Stride("Stride", Float) = 1
 		_Attenuation("Attenuation", Float) = 0.995
 		_C("C", Float) = 0.1	// ”g‚Ì‘¬‚³
@@ -78,6 +78,7 @@ Shader "Unlit/WaveEquation"
 				half va = (prev.a * 2 - prevprev.a + (prev_r.b + prev.b + prev_b.g + prev.g - prev.a * 4) * _C);
 
 				/**
+				* value = (value + 1) * 0.5;‚ğÀs‚·‚é‘O‚É_Attenuation‚ğæZ‚µ‚½‚Æ‚«‚Ì‹““®‚É‚Â‚¢‚Ä ...
 				* _Attenuation‚Å 0.5‚ÉŒ¸Š‚µ‚æ‚¤‚Æ‚·‚é‚Æ”g‚ÌƒmƒCƒY‚ª‚Ğ‚Ç‚­‚È‚éD
 				* _Attenuation‚ğg‚í‚È‚¢ê‡”g‚Í0‚É”­U‚·‚é‚ªC‚±‚Ìê‡ƒmƒCƒY‚Í‰ü‘P‚³‚ê‚éD
 				*/
@@ -90,11 +91,10 @@ Shader "Unlit/WaveEquation"
 
 				float4 value = float4(vr, vg, vb, va);
 
-				value *= _Attenuation;
-				value *= _RoundAdjuster;
-
 				value = (value + 1) * 0.5;
 				value += tex2D(_InputTex, i.uv);
+				value *= _Attenuation;
+				value += _RoundAdjuster;
 
 				return value;
 			}
